@@ -1,0 +1,19 @@
+version: '3'
+networks:
+  test:
+    driver: bridge
+
+services:
+
+  api-corona:
+    container_name: api-corona
+    build: ./web
+    restart: always
+    ports:
+      - "4000:4000"
+    volumes:
+      - ./web:/app  
+networks:
+  test:
+    driver: bridge
+    
